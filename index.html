@@ -74,6 +74,38 @@
             color: var(--accent-color);
         }
 
+        /* Hamburger Menu */
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 5%;
+                background: white;
+                padding: 20px;
+                border-radius: 15px;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                flex-direction: column;
+                gap: 15px;
+                width: 200px;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
         /* Hero Section */
         .hero {
             padding: 80px 10%;
@@ -209,11 +241,6 @@
             font-size: 0.9rem;
             color: #888;
         }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links { display: none; }
-        }
     </style>
 </head>
 
@@ -223,6 +250,13 @@
     <header>
         <nav class="navbar">
             <div class="brand-name">الموقع الرسمي للرسامة سحاب علي الصبيحي</div>
+
+            <!-- زر القائمة للجوال -->
+            <div class="menu-btn" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- روابط التنقل -->
             <ul class="nav-links">
                 <li><a href="#about">من أنا</a></li>
                 <li><a href="#gallery">المعرض</a></li>
@@ -310,13 +344,20 @@
         </div>
     </section>
 
-       <footer>
+        <footer>
         <p>جميع الحقوق محفوظة © 2026 | سحاب علي الصبيحي 🌸</p>
     </footer>
 
     <!-- AOS Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
 
 </body>
 </html>
