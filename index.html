@@ -263,33 +263,19 @@
         }
     </style>
 
-    /* تنسيق الشعار ليكون بحجم مناسب ومتناسق مع النص */
-.brand-logo {
-    height: 40px; /* يمكنك تصغير الرقم إلى 30px إذا أردته أصغر */
-    width: auto;  /* يحافظ على أبعاد الشعار دون تشويه */
-    vertical-align: middle; /* يضمن بقاء الشعار على خط واحد مع النص */
-    margin-left: 10px; /* يترك مسافة بسيطة بين الشعار والنص من جهة اليسار */
-}
-
+ /* هذا الكود يوضع حصراً داخل وسم <style> */
 .brand-container {
     display: flex;
-    align-items: center; /* يحاذي الشعار والنص عمودياً في المنتصف */
+    align-items: center;
+    gap: 15px; /* مسافة أنيقة بين الشعار والاسم */
 }
-    <style>
-    /* تأكد أن هذا الكود داخل وسم style لكي لا يظهر كنص في المتصفح */
-    .brand-logo {
-        height: 30px !important; /* قمنا بتصغير الحجم وأضفنا important لضمان التنفيذ */
-        width: auto;
-        vertical-align: middle;
-        margin-left: 10px;
-    }
 
-    .brand-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
-</style>
+.brand-logo {
+    height: 60px !important; /* قمنا بتكبيره ليكون واضحاً ومميزاً */
+    width: auto;
+    display: block;
+}
+   
     
 <!-- Header -->
    <header>
