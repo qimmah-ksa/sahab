@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# رابط خريطة الموقع لسهولة الأرشفة
+Sitemap: https://qimmah-ksa.github.io/sahab/sitemap.xml
