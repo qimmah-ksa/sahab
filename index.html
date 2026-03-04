@@ -275,12 +275,23 @@
     display: flex;
     align-items: center; /* يحاذي الشعار والنص عمودياً في المنتصف */
 }
+    <style>
+    /* تأكد أن هذا الكود داخل وسم style لكي لا يظهر كنص في المتصفح */
+    .brand-logo {
+        height: 30px !important; /* قمنا بتصغير الحجم وأضفنا important لضمان التنفيذ */
+        width: auto;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+
+    .brand-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+</style>
     
-</head>
-
-<body>
-
-    <!-- Header -->
+<!-- Header -->
    <header>
     <nav class="navbar">
         <div class="brand-container">
@@ -303,6 +314,7 @@
         </nav>
     </header>
 
+<body>
     <!-- Hero -->
     <section class="hero">
         <h1 data-aos="fade-up"> مرحباً بكم في عالمي الفني </h1>
