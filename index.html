@@ -262,6 +262,20 @@
             color: #888;
         }
     </style>
+
+    /* تنسيق الشعار ليكون بحجم مناسب ومتناسق مع النص */
+.brand-logo {
+    height: 40px; /* يمكنك تصغير الرقم إلى 30px إذا أردته أصغر */
+    width: auto;  /* يحافظ على أبعاد الشعار دون تشويه */
+    vertical-align: middle; /* يضمن بقاء الشعار على خط واحد مع النص */
+    margin-left: 10px; /* يترك مسافة بسيطة بين الشعار والنص من جهة اليسار */
+}
+
+.brand-container {
+    display: flex;
+    align-items: center; /* يحاذي الشعار والنص عمودياً في المنتصف */
+}
+    
 </head>
 
 <body>
@@ -270,8 +284,8 @@
    <header>
     <nav class="navbar">
         <div class="brand-container">
-            <img src="logo.png" alt="شعار لوحة ألوان وفرشاة" class="brand-logo" loading="lazy">
-            <span class="brand-name"> موقع الرسامة سحاب علي الصبيحي </span>
+            <img src="logo.png" alt="شعار لوحة ألوان" class="brand-logo">
+            <div class="brand-name">موقع الرسامة سحاب علي الصبيحي</div>
         </div>
 
             <!-- زر القائمة للجوال -->
