@@ -244,17 +244,21 @@
             text-align: center;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 1.8rem;
-            margin: 0 15px;
-            transition: 0.3s;
-        }
+     .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* مسافة بين الأيقونات */
+    margin-top: 25px;
+}
 
-        .social-icons a:hover {
-            color: var(--gold-color);
-        }
+.social-icons a {
+    transition: transform 0.3s ease;
+}
 
+.social-icons a:hover {
+    transform: scale(1.2); /* تكبير بسيط عند تمرير الماوس */
+}
+        
         footer {
             padding: 30px;
             text-align: center;
