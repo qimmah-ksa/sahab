@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # رابط خريطة الموقع لسهولة الأرشفة
-Sitemap: https://www.sahabart.com/sitemap.xml
+Sitemap: https://sahabart.com/sitemap.xml
