@@ -513,22 +513,25 @@
         }
     </script>
 <button id="backToTop" onclick="scrollToTop()" title="العودة للأعلى">للأعلى</button>
+<script>
     window.onscroll = function() {
-    // هنا ننادي السهم باسمه المعرف في HTML
-    let saba_btn = document.getElementById("backToTop"); 
-    
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        saba_btn.style.display = "block";
-    } else {
-        saba_btn.style.display = "none";
-    }
-};
+        // هنا ننادي السهم باسمه المعرف في HTML
+        let saba_btn = document.getElementById("backToTop"); 
+        
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            saba_btn.style.display = "block";
+        } else {
+            saba_btn.style.display = "none";
+        }
+    };
 
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
+    
 </body>
 </html>
