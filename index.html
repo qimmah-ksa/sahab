@@ -77,55 +77,65 @@
     padding: 10px 0;
 }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-        }
+       /* روابط التنقل - النسخة المحدثة */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 700;
-            transition: 0.3s;
-        }
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color); /* سيأخذ البنفسجي من الـ root */
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+.nav-links a:hover {
+    color: var(--accent-color); /* سيتحول للوردي عند التمرير */
+    background-color: #fff0f3; /* خلفية وردية خفيفة جداً لإضافة لمسة فنية */
+    transform: translateY(-2px); /* حركة خفيفة للأعلى */
+}
 
-        /* Hamburger Menu */
-        .menu-btn {
-            display: none;
-            font-size: 28px;
-            color: var(--primary-color);
-            cursor: pointer;
-        }
+/* تنسيق زر القائمة للجوال */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 1001;
+}
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 5%;
-                background: white;
-                padding: 20px;
-                border-radius: 15px;
-                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-                flex-direction: column;
-                gap: 15px;
-                width: 200px;
-            }
+/* إعدادات الشاشات الصغيرة (الجوال) */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* إظهار الزر في الجوال */
+    }
 
-            .nav-links.show {
-                display: flex;
-            }
+    .nav-links {
+        display: none; /* إخفاء الروابط العادية */
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(125, 91, 166, 0.2);
+        flex-direction: column;
+        gap: 15px;
+        width: 200px;
+        text-align: center;
+        border: 1px solid #fce4ec;
+    }
 
-            .menu-btn {
-                display: block;
-            }
-        }
-
+    .nav-links.show {
+        display: flex; /* إظهار القائمة عند الضغط على الزر */
+    }
+}
+        
         /* Hero Section */
         .hero {
             padding: 80px 10%;
