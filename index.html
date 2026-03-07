@@ -538,16 +538,18 @@
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
-<button id="backToTop" onclick="scrollToTop()" title="العودة للأعلى">للأعلى</button>
+<button id="backToTop" onclick="scrollToTop()" title="العودة للأعلى">↑ للأعلى</button>
+
 <script>
     window.onscroll = function() {
-        // هنا ننادي السهم باسمه المعرف في HTML
         let saba_btn = document.getElementById("backToTop"); 
-        
-        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-            saba_btn.style.display = "block";
-        } else {
-            saba_btn.style.display = "none";
+        if (saba_btn) {
+            // يظهر الزر بعد النزول 300 بكسل
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                saba_btn.style.display = "block";
+            } else {
+                saba_btn.style.display = "none";
+            }
         }
     };
 
@@ -557,9 +559,11 @@
             behavior: 'smooth'
         });
     }
+</script>
    
 </body>
 
 </html>
+
 
 
