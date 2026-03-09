@@ -122,16 +122,21 @@
 }
         
 .nav-links a {
-    color: #ffffff; /* النص أبيض */
-    transition: 0.3s ease;
+    text-decoration: none;
+    color: var(--primary-color); /* سيأخذ البنفسجي من الـ root */
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #ffffff; /* يبقى أبيض */
-    background-color: rgba(255, 255, 255, 0.15); /* خلفية بيضاء شفافة فوق البنفسجي */
-    transform: translateY(-2px);
-    border-radius: 6px; /* يعطي لمسة أنيقة */
+    color: var(--accent-color); /* سيتحول للوردي عند التمرير */
+    background-color: #fff0f3; /* خلفية وردية خفيفة جداً لإضافة لمسة فنية */
+    transform: translateY(-2px); /* حركة خفيفة للأعلى */
 }
+
 
 /* تنسيق زر القائمة للجوال */
 .menu-btn {
@@ -563,4 +568,5 @@
 </body>
 
 </html>
+
 
