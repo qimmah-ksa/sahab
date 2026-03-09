@@ -59,6 +59,256 @@
         .social-links { margin-top: 15px; }
         .social-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 20px; }
     </style>
+      /* Header + Navbar */
+        header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 4px 15px rgba(125, 91, 166, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+.brand-name {
+    /* 1. نوع الخط: سنستخدم خط Cairo أو خطاً فنياً */
+    font-family: 'Cairo', sans-serif; 
+    
+    /* 2. حجم الخط */
+    font-size: 32px; 
+    
+    /* 3. لون الخط: سنختار البنفسجي الغامق أو الوردي الفني */
+    color: #7d5ba6; 
+    
+    /* 4. ثقل الخط (عريض) */
+    font-weight: 900; 
+    
+    /* 5. إضافة ظل خفيف للنص ليعطيه لمسة جمالية */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* 6. المسافات */
+    letter-spacing: 1px;
+    padding: 10px 0;
+}
+
+       /* روابط التنقل - النسخة المحدثة */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+        
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color); /* سيأخذ البنفسجي من الـ root */
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color); /* سيتحول للوردي عند التمرير */
+    background-color: #fff0f3; /* خلفية وردية خفيفة جداً لإضافة لمسة فنية */
+    transform: translateY(-2px); /* حركة خفيفة للأعلى */
+}
+
+
+/* تنسيق زر القائمة للجوال */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* إعدادات الشاشات الصغيرة (الجوال) */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block; /* إظهار الزر في الجوال */
+    }
+
+    .nav-links {
+        display: none; /* إخفاء الروابط العادية */
+        position: absolute;
+        top: 80px;
+        right: 5%;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(125, 91, 166, 0.2);
+        flex-direction: column;
+        gap: 15px;
+        width: 200px;
+        text-align: center;
+        border: 1px solid #fce4ec;
+    }
+
+    .nav-links.show {
+        display: flex; /* إظهار القائمة عند الضغط على الزر */
+    }
+}
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 10%;
+            text-align: center;
+            background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-draw {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-draw:hover {
+            background: var(--primary-color);
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 700px;
+            margin: auto;
+            font-size: 1.3rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Gallery */
+        .gallery-section { padding: 60px 10%; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .artwork-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 3px solid transparent;
+        }
+
+        .artwork-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+        }
+
+        .artwork-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .artwork-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .artwork-info h3 {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        /* Contact */
+        .contact-box {
+            background: var(--primary-color);
+            color: white;
+            padding: 50px 10%;
+            border-radius: 30px;
+            margin: 60px 10%;
+            text-align: center;
+        }
+
+     .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* مسافة بين الأيقونات */
+    margin-top: 25px;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2); /* تكبير بسيط عند تمرير الماوس */
+}
+        
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+   /* هذا الكود يوضع حصراً داخل وسم <style> */
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* مسافة أنيقة بين الشعار والاسم */
+}
+
+.brand-logo {
+    height: 60px !important; /* قمنا بتكبيره ليكون واضحاً ومميزاً */
+    width: auto;
+    display: block;
+}      
+    </style>
 </head>
 <body>
 
