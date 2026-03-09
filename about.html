@@ -354,12 +354,6 @@
    
     <!-- About -->
     <section id="about-sahab" class="about-container">
-    <div class="about-content">
-        <div class="about-image">
-              <img src="logo.png" alt="شعار موقع الرسامة سحاب" class="brand-logo">
-            <div class="image-deco"></div>
-        </div>
-
         <div class="about-text">
             <h2 class="section-title">من هي سحاب؟</h2>
             <p class="intro-p">
@@ -438,28 +432,7 @@
             document.querySelector('.nav-links').classList.toggle('show');
         }
     </script>
-
-<script>
-    window.onscroll = function() {
-        let saba_btn = document.getElementById("backToTop"); 
-        if (saba_btn) {
-            // يظهر الزر بعد النزول 300 بكسل
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                saba_btn.style.display = "block";
-            } else {
-                saba_btn.style.display = "none";
-            }
-        }
-    };
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-</script>
-   
+ 
 </body>
 
 </html>
