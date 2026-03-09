@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /index.html
 
 # رابط خريطة الموقع لسهولة الأرشفة
 Sitemap: https://sahabart.com/sitemap.xml
