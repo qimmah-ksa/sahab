@@ -120,21 +120,17 @@
     display: flex;
     gap: 25px;
 }
-
+        
 .nav-links a {
-    text-decoration: none;
-    color: var(--primary-color); /* سيأخذ البنفسجي من الـ root */
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    color: #ffffff; /* النص أبيض */
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: var(--accent-color); /* سيتحول للوردي عند التمرير */
-    background-color: #fff0f3; /* خلفية وردية خفيفة جداً لإضافة لمسة فنية */
-    transform: translateY(-2px); /* حركة خفيفة للأعلى */
+    color: #ffffff; /* يبقى أبيض */
+    background-color: rgba(255, 255, 255, 0.15); /* خلفية بيضاء شفافة فوق البنفسجي */
+    transform: translateY(-2px);
+    border-radius: 6px; /* يعطي لمسة أنيقة */
 }
 
 /* تنسيق زر القائمة للجوال */
@@ -567,3 +563,4 @@
 </body>
 
 </html>
+
