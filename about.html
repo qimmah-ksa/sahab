@@ -1,29 +1,96 @@
-<section id="about-sahab" class="about-container">
-    <div class="about-content">
-        <div class="about-image">
-            <img src="sahab-photo.jpg" alt="الرسامة سحاب علي الصبيحي" class="profile-img">
-            <div class="image-deco"></div>
-        </div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>من أنا | الرسامة سحاب علي الصبيحي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #7d5ba6; /* البنفسجي */
+            --accent-color: #ff85a2;  /* الوردي */
+            --bg-color: #fdf6ff;
+            --text-color: #444;
+        }
 
-        <div class="about-text">
-            <h2 class="section-title">من هي سحاب؟</h2>
-            <p class="intro-p">
-                فنانة تشكيلية سعودية واعدة، ترى العالم من خلال ريشتها وتحول الألوان إلى مشاعر تنبض بالحياة.
-            </p>
-            <div class="bio-details">
-                <p>بدأت رحلتي الفنية منذ الصغر، حيث كانت الألوان هي لغتي الأولى للتعبير عن الجمال والخيال. أؤمن أن الفن ليس مجرد رسم، بل هو رسالة حب وسلام تصل إلى القلوب دون استئذان.</p>
-                
-                <ul class="achievements-list">
-                    <li>✨ تخصصت في الفن التشكيلي المعاصر.</li>
-                    <li>🎨 شاركت في العديد من المعارض المدرسية الفنية الناشئة.</li>
-                    <li>🌸 أسعى لنشر الثقافة البصرية والجمال من خلال لوحاتي.</li>
-                </ul>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+            background-color: #fff;
+            color: var(--text-color);
+        }
+
+        /* --- تنسيق الهيدر (انسخه من ملفك الرئيسي ليتطابق تماماً) --- */
+        header {
+            background-color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo { font-weight: 900; color: var(--primary-color); font-size: 24px; text-decoration: none; }
+        nav a { margin-right: 20px; text-decoration: none; color: var(--text-color); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--accent-color); }
+
+        /* --- تنسيق محتوى "من أنا" --- */
+        .about-section { padding: 80px 10%; background: linear-gradient(to bottom, #fff, var(--bg-color)); }
+        .about-container { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-image { flex: 1; min-width: 300px; position: relative; }
+        .about-image img { width: 100%; border-radius: 25px; box-shadow: 15px 15px 0 var(--primary-color); }
+        .about-text { flex: 1.5; min-width: 300px; }
+        .about-text h1 { color: var(--primary-color); font-size: 35px; margin-bottom: 20px; }
+        .about-text p { line-height: 1.8; font-size: 18px; color: #666; }
+        .highlight { color: var(--accent-color); font-weight: bold; }
+
+        /* --- تنسيق الفوتر (انسخه من ملفك الرئيسي ليتطابق تماماً) --- */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+        .social-links { margin-top: 15px; }
+        .social-links a { color: white; margin: 0 10px; text-decoration: none; font-size: 20px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">سحاب آر ت</a>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html" style="color: var(--accent-color);">من أنا</a>
+            <a href="index.html#gallery">المعرض</a>
+            <a href="index.html#contact">اتصل بي</a>
+        </nav>
+    </header>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="sahab-profile.jpg" alt="الرسامة سحاب">
             </div>
-            
-            <div class="signature">
-                <p>مع كامل حبي،</p>
-                <span class="name-sig">سحاب علي الصبيحي</span>
+            <div class="about-text">
+                <h1>قصتي مع الألوان 🎨</h1>
+                <p>أهلاً بكم في عالمي الصغير، أنا <span class="highlight">سحاب علي الصبيحي</span>، فنانة تشكيلية أجد نفسي بين تدرجات الألوان وخطوط الفرشاة.</p>
+                <p>بدأت رحلتي الفنية كشغف طفولي، وتطورت مع كل لوحة أرسمها لتصبح تعبيراً عن مشاعري ورؤيتي للجمال من حولي. في هذا المعرض، أشارككم قطعاً من روحي تجسدت في لوحات فنية.</p>
+                <p>هدفي هو نشر الجمال وإيصال رسالة إبداعية تتجاوز الحدود، فالإبداع لا عمر له ولا حدود.</p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © الرسامة سحاب علي الصبيحي 2026</p>
+        <div class="social-links">
+            </div>
+    </footer>
+
+</body>
+</html>
