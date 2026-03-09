@@ -63,14 +63,25 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">سحاب آر ت</a>
-        <nav>
-            <a href="index.html">الرئيسية</a>
-            <a href="about.html" style="color: var(--accent-color);">من أنا</a>
-            <a href="index.html#gallery">المعرض</a>
-            <a href="index.html#contact">اتصل بي</a>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="brand-container">
+            <img src="logo.png" alt="شعار لوحة ألوان" class="brand-logo">
+            <div class="brand-name">موقع الرسامة سحاب علي الصبيحي</div>
+        </div>
+
+        <div class="menu-btn" onclick="toggleMenu()">
+            <span style="font-size: 30px; color: var(--primary-color);">☰</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="https://sahabart.com">الرئيسية</a></li>  
+            <li><a href="#about">من أنا</a></li>
+            <li><a href="#gallery">معرض الرسوم</a></li>
+            <li><a href="#contact">تواصل معي</a></li>
+        </ul>
+    </nav>
+      
+</header>
 
     <section class="about-section">
         <div class="about-container">
