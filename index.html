@@ -84,28 +84,43 @@
 
         /* Header + Navbar */
 /* --- التنسيق النهائي للهيدر في الموقع الرسمي --- */
-/* إجبار الروابط على اللون الأبيض ومنع اللون الأزرق الافتراضي */
-.nav-links a, 
+
+/* 1. تنسيق اسم الموقع والشعار فقط (الحجم الكبير) */
 .brand-container, 
 .brand-name {
     font-family: 'Cairo', sans-serif;
-    font-size: 32px !important; /* الحجم الكبير الذي كان في النسخة القديمة */
+    font-size: 32px !important; /* الحجم الكبير الفخم للاسم */
     font-weight: 900 !important;
     color: white !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    white-space: nowrap; /* يمنع الاسم من النزول لسطر جديد */
+    white-space: nowrap;
+    text-decoration: none !important;
 }
 
-/* التأكد من أن الروابط داخل القائمة بيضاء دائماً */
+/* 2. تنسيق روابط القائمة فقط (الحجم الناعم وبدون خطوط) */
+.nav-links a {
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px !important; /* حجم أنعم وأصغر للقوائم */
+    font-weight: 700 !important;
+    color: white !important;
+    text-decoration: none !important; /* حذف الخط اللي تحت الكلام */
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+/* 3. حالة الروابط (المزارة والنشطة) لضمان بقائها بيضاء */
 .nav-links a:visited, 
 .nav-links a:active {
     color: white !important;
+    text-decoration: none !important;
 }
 
-/* لون القوائم عند تمرير الماوس */
+/* 4. تأثير التمرير للقوائم فقط */
 .nav-links a:hover {
-    color: var(--primary-color) !important; /* يتحول للبنفسجي */
-    background-color: white !important; /* خلفية بيضاء */
+    color: var(--primary-color) !important;
+    background-color: white !important;
+    border-radius: 8px;
+    transform: translateY(-2px);
 }
 
 /* أيقونة القائمة (☰) في الجوال */
@@ -588,6 +603,7 @@ header {
 </body>
 
 </html>
+
 
 
 
