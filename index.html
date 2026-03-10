@@ -360,7 +360,58 @@ header {
         box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
     }
 </style>
-    
+
+  /* --- تنسيقات خاصة بالجوال (أقل من 768px) --- */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 3% !important; /* تقليل المسافات الجانبية */
+    }
+
+    .brand-name {
+        font-size: 18px !important; /* تصغير الاسم ليناسب عرض الجوال */
+        white-space: normal !important; /* السماح للاسم بالنزول لسطرين إذا لزم الأمر */
+        line-height: 1.2;
+        max-width: 180px; /* تحديد عرض النص لكي لا يزاحم الأيقونة */
+    }
+
+    .brand-logo {
+        height: 45px !important; /* تصغير الشعار قليلاً في الجوال */
+        width: 45px !important;
+    }
+
+    /* إخفاء القائمة الأفقية وإظهار زر المنيو */
+    .nav-links {
+        display: none !important; /* إخفاء الروابط العادية */
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        left: 5%;
+        background: white;
+        flex-direction: column !important;
+        gap: 10px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        z-index: 2000;
+    }
+
+    /* إظهار القائمة عند الضغط على الزر (يحتاج JavaScript) */
+    .nav-links.show {
+        display: flex !important;
+    }
+
+    .nav-links a {
+        color: var(--primary-color) !important; /* تحويل لون الروابط للبنفسجي داخل القائمة البيضاء */
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+        padding: 12px;
+    }
+
+    .menu-btn {
+        display: block !important; /* إظهار زر ☰ */
+        color: white !important;
+    }
+}  
  <body>      
 <!-- Header -->
 <header>
@@ -603,6 +654,7 @@ header {
 </body>
 
 </html>
+
 
 
 
