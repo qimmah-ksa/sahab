@@ -81,46 +81,56 @@
             color: var(--text-dark);
             line-height: 1.6;
         }
+/* --- تنسيق الهيدر الموحد (الاسم والقوائم بنفس الحجم) --- */
+header {
+    background-color: #7d5ba6 !important; /* البنفسجي */
+    padding: 8px 5% !important; /* هيدر أنحف وأجمل */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        /* Header + Navbar */
-/* --- التنسيق النهائي للهيدر في الموقع الرسمي --- */
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
 
-/* 1. تنسيق اسم الموقع والشعار فقط (الحجم الكبير) */
-.brand-container, 
+/* الشعار بحجم متناسق مع الخط الصغير */
+.brand-logo {
+    height: 42px !important; 
+    width: 42px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 4px !important;
+    object-fit: contain !important;
+}
+
+/* اسم الموقع - جعلناه 18px ليتساوى مع القوائم */
 .brand-name {
     font-family: 'Cairo', sans-serif;
-    font-size: 32px !important; /* الحجم الكبير الفخم للاسم */
-    font-weight: 900 !important;
+    font-size: 18px !important; 
+    font-weight: 800 !important; /* عريض ليميزه كعنوان */
     color: white !important;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
     text-decoration: none !important;
 }
 
-/* 2. تنسيق روابط القائمة فقط (الحجم الناعم وبدون خطوط) */
+/* روابط القائمة - بنفس حجم الاسم 18px */
 .nav-links a {
     font-family: 'Cairo', sans-serif;
-    font-size: 18px !important; /* حجم أنعم وأصغر للقوائم */
+    font-size: 18px !important; 
     font-weight: 700 !important;
     color: white !important;
-    text-decoration: none !important; /* حذف الخط اللي تحت الكلام */
-    padding: 8px 15px;
-    transition: all 0.3s ease;
-}
-
-/* 3. حالة الروابط (المزارة والنشطة) لضمان بقائها بيضاء */
-.nav-links a:visited, 
-.nav-links a:active {
-    color: white !important;
     text-decoration: none !important;
+    padding: 5px 12px;
+    transition: 0.3s;
 }
 
-/* 4. تأثير التمرير للقوائم فقط */
+/* تأثير التمرير */
 .nav-links a:hover {
-    color: var(--primary-color) !important;
     background-color: white !important;
-    border-radius: 8px;
-    transform: translateY(-2px);
+    color: #7d5ba6 !important;
+    border-radius: 6px;
 }
 
 /* أيقونة القائمة (☰) في الجوال */
@@ -703,6 +713,7 @@ header {
 </body>
 
 </html>
+
 
 
 
