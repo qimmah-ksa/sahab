@@ -50,55 +50,57 @@
             overflow-x: hidden; /* لمنع التمرير الأفقي العرضي */
         }
 
-    /* --- الهيدر الموحد لصفحة من أنا --- */
+/* --- الكود الموحد والنهائي لصفحة من أنا --- */
 header {
-    background-color: #7d5ba6 !important; /* الخلفية البنفسجية */
-    padding: 10px 5% !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: #7d5ba6 !important;
+    padding: 8px 5% !important; /* هيدر نحيف واحترافي */
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-.navbar {
+.brand-container {
     display: flex !important;
-    justify-content: space-between !important;
     align-items: center !important;
-    width: 100%;
-}
-
-/* اسم الموقع كبير وأبيض */
-.brand-name {
-    font-family: 'Cairo', sans-serif; 
-    font-size: 32px !important; 
-    color: white !important; 
-    font-weight: 900 !important; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    gap: 12px !important;
     text-decoration: none !important;
 }
 
-/* القوائم ناعمة وبيضاء وبدون خطوط */
-.nav-links {
-    list-style: none !important;
-    display: flex !important;
-    gap: 20px;
+/* الشعار الدائري الصغير المتناسق مع الخط الجديد */
+.brand-logo {
+    height: 42px !important;
+    width: 42px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 4px !important;
+    object-fit: contain !important;
 }
-        
+
+/* اسم الموقع - تم توحيده ليكون 18px مثل القوائم */
+.brand-name {
+    font-family: 'Cairo', sans-serif !important;
+    font-size: 18px !important; 
+    font-weight: 800 !important;
+    color: white !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+/* روابط القائمة - 18px */
 .nav-links a {
     text-decoration: none !important;
     color: white !important;
     font-weight: 700 !important;
     font-size: 18px !important;
-    padding: 8px 15px;
-    transition: all 0.3s ease;
+    padding: 6px 12px;
+    transition: 0.3s;
 }
 
 /* تأثير التمرير */
 .nav-links a:hover {
-    color: #7d5ba6 !important;
     background-color: white !important;
-    border-radius: 8px;
-    transform: translateY(-2px);
+    color: #7d5ba6 !important;
+    border-radius: 6px;
 }
 
         /* تنسيق الجوال */
