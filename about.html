@@ -50,53 +50,56 @@
             overflow-x: hidden; /* لمنع التمرير الأفقي العرضي */
         }
 
-        /* Header + Navbar */
-        header {
-            background: white;
-            padding: 15px 5%;
-            box-shadow: 0 4px 15px rgba(125, 91, 166, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* --- الهيدر الموحد لصفحة من أنا --- */
+header {
+    background-color: #7d5ba6 !important; /* الخلفية البنفسجية */
+    padding: 10px 5% !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100%;
+}
 
-        .brand-name {
-            font-family: 'Cairo', sans-serif; 
-            font-size: 28px; /* تقليل بسيط ليتناسب مع الجوال بشكل أفضل */
-            color: var(--primary-color); 
-            font-weight: 900; 
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
-            letter-spacing: 0.5px;
-            padding: 5px 0;
-        }
+/* اسم الموقع كبير وأبيض */
+.brand-name {
+    font-family: 'Cairo', sans-serif; 
+    font-size: 32px !important; 
+    color: white !important; 
+    font-weight: 900 !important; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-decoration: none !important;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-                
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 700;
-            font-size: 1.05rem;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
+/* القوائم ناعمة وبيضاء وبدون خطوط */
+.nav-links {
+    list-style: none !important;
+    display: flex !important;
+    gap: 20px;
+}
+        
+.nav-links a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-            background-color: #fff0f3;
-            transform: translateY(-2px);
-        }
+/* تأثير التمرير */
+.nav-links a:hover {
+    color: #7d5ba6 !important;
+    background-color: white !important;
+    border-radius: 8px;
+    transform: translateY(-2px);
+}
 
         /* تنسيق الجوال */
         .menu-btn {
@@ -272,19 +275,19 @@
 
 <body> 
     
-    <header>
-    <nav class="navbar">
+   <header>
+    <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
         <a href="index.html" class="brand-container" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
-            <img src="logo.png" alt="شعار لوحة ألوان" class="brand-logo">
-            <div class="brand-name" style="color: var(--primary-color); font-weight: bold;">موقع الرسامة سحاب علي الصبيحي</div>
+            <img src="logo.png" alt="شعار سحاب" class="brand-logo">
+            <div class="brand-name">موقع الرسامة سحاب علي الصبيحي</div>
         </a>
 
-        <div class="menu-btn" onclick="toggleMenu()">
-            <span style="font-size: 30px; color: var(--primary-color);">☰</span>
+        <div class="menu-btn" onclick="toggleMenu()" style="color: white; cursor: pointer;">
+            <span style="font-size: 30px;">☰</span>
         </div>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">الرئيسية</a></li>  
+        <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 20px;">
+            <li><a href="index.html">الرئيسية</a></li>
             <li><a href="about.html">من أنا</a></li>
             <li><a href="index.html#gallery">معرض الرسوم</a></li>
             <li><a href="index.html#contact">تواصل معي</a></li>
