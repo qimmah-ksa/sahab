@@ -111,23 +111,61 @@ header {
             cursor: pointer;
         }
 
-        @media (max-width: 768px) {
-            .menu-btn { display: block; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                right: 5%;
-                background: white;
-                padding: 20px;
-                border-radius: 15px;
-                box-shadow: 0 10px 25px rgba(125, 91, 166, 0.2);
-                flex-direction: column;
-                width: 200px;
-                border: 1px solid #fce4ec;
-            }
-            .nav-links.show { display: flex; }
-        }
+      /* تنسيق الجوال الاحترافي - مطابق للصفحة الرئيسية */
+@media (max-width: 768px) {
+    /* 1. إظهار زر القائمة (☰) باللون الأبيض فوق الخلفية البنفسجية */
+    .menu-btn {
+        display: block !important;
+        color: white !important;
+        font-size: 28px !important;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    /* 2. تنسيق القائمة المنسدلة */
+    .nav-links {
+        display: none; /* مخفية افتراضياً */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: white !important; /* خلفية بيضاء للقائمة فقط */
+        flex-direction: column !important;
+        padding: 20px 0;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        z-index: 1000;
+        width: 100%;
+    }
+
+    /* إظهار القائمة عند النقر */
+    .nav-links.show {
+        display: flex !important;
+    }
+
+    /* 3. حل مشكلة اختفاء الأسماء (جعلها بنفسجية لتظهر فوق الخلفية البيضاء) */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: #7d5ba6 !important; /* لون بنفسجي واضح */
+        font-size: 18px !important;
+        padding: 15px 0 !important;
+        display: block !important;
+        border-bottom: 1px solid #f5f5f5; /* خط فاصل خفيف */
+        font-weight: 700 !important;
+    }
+
+    .nav-links li:last-child a {
+        border-bottom: none !important;
+    }
+
+    /* تصغير اسم الموقع ليناسب الجوال */
+    .brand-name {
+        font-size: 16px !important;
+    }
+}
                 
         /* Hero Section */
         .hero {
