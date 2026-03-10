@@ -88,8 +88,12 @@
 .nav-links a, 
 .brand-container, 
 .brand-name {
-    color: white !important; /* اللون الأبيض الصريح */
-    text-decoration: none !important; /* حذف الخط الذي تحت الكلام */
+    font-family: 'Cairo', sans-serif;
+    font-size: 32px !important; /* الحجم الكبير الذي كان في النسخة القديمة */
+    font-weight: 900 !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    white-space: nowrap; /* يمنع الاسم من النزول لسطر جديد */
 }
 
 /* التأكد من أن الروابط داخل القائمة بيضاء دائماً */
@@ -107,6 +111,17 @@
 /* أيقونة القائمة (☰) في الجوال */
 .menu-btn span {
     color: white !important;
+}
+        /* إخفاء زر القائمة في الشاشات الكبيرة */
+.menu-btn {
+    display: none !important;
+}
+
+/* إظهار زر القائمة في الجوال فقط */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block !important;
+    }
 }
         
 header {
@@ -573,6 +588,7 @@ header {
 </body>
 
 </html>
+
 
 
 
