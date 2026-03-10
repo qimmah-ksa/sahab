@@ -132,15 +132,9 @@
     display: none !important;
 }
 
-/* إظهار زر القائمة في الجوال فقط */
-@media (max-width: 768px) {
-    .menu-btn {
-        display: block !important;
-    }
-}
-        
+/* --- 1. تنسيق الكمبيوتر والشاشات الكبيرة --- */
 header {
-    background-color: var(--primary-color) !important;
+    background-color: #7d5ba6 !important;
     padding: 10px 5% !important;
     position: sticky;
     top: 0;
@@ -149,36 +143,89 @@ header {
 }
 
 .navbar {
-    display: flex !important; /* تفعيل خاصية الصف الواحد */
-    flex-direction: row !important; /* التأكيد على أن العناصر بجانب بعضها */
-    justify-content: space-between !important; /* الشعار يمين والروابط يسار */
+    display: flex !important;
+    justify-content: space-between !important;
     align-items: center !important;
     width: 100%;
-}
-
-/* تعديل خلفية الشعار لتكون بيضاء دائرية */
-.brand-logo {
-    height: 55px !important;
-    width: 55px !important;
-    background-color: white !important; /* الخلفية البيضاء */
-    border-radius: 50% !important; /* الشكل الدائري */
-    padding: 5px !important;
-    object-fit: contain;
-    display: block;
 }
 
 .brand-container {
     display: flex !important;
     align-items: center !important;
     gap: 15px;
-    text-decoration: none;
+    text-decoration: none !important;
+}
+
+.brand-logo {
+    height: 55px !important;
+    width: 55px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    object-fit: contain !important;
+    display: block;
+}
+
+.brand-name {
+    font-family: 'Cairo', sans-serif;
+    font-size: 32px !important;
+    font-weight: 900 !important;
+    color: white !important;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex !important; /* لضمان ظهور الروابط بجانب بعضها في الكمبيوتر */
+    list-style: none !important;
+    display: flex !important;
     gap: 20px;
-    margin-right: auto; /* دفع القائمة لأقصى اليسار */
+}
+
+.nav-links a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+/* إخفاء زر الجوال في الكمبيوتر */
+.menu-btn { display: none !important; }
+
+/* --- 2. تنسيق الجوال (حل مشكلة اللون والزحام) --- */
+@media (max-width: 768px) {
+    .brand-name { font-size: 18px !important; }
+    .brand-logo { height: 45px !important; width: 45px !important; }
+    
+    .menu-btn { 
+        display: block !important; 
+        color: white !important; 
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none; /* إخفاء القائمة الأفقية */
+        position: absolute;
+        top: 65px;
+        left: 5%;
+        right: 5%;
+        background-color: white !important; /* خلفية بيضاء للمنسدلة */
+        flex-direction: column !important;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show { display: flex !important; }
+
+    /* حل مشكلة اختفاء النص في الجوال */
+    .nav-links a {
+        color: #7d5ba6 !important; /* لون بنفسجي فوق الخلفية البيضاء */
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .nav-links li:last-child a { border-bottom: none !important; }
 }
         
         /* Hero Section */
@@ -656,6 +703,7 @@ header {
 </body>
 
 </html>
+
 
 
 
