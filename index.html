@@ -328,27 +328,31 @@
 }      
     </style>
     
-    <style>
+ <style>
+    /* تنسيق زر "من أنا" في الصفحة الرئيسية */
     .about-btn {
-    display: block;
-    width: 100%;
-    max-width: 300px; /* طول مناسب للزر */
-    margin: 20px auto;
-    padding: 12px 20px;
-    background-color: #6A0DAD; /* بنفسجي */
-    color: #ffffff; /* كتابة باللون الأبيض */
-    text-align: center;
-    font-size: 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: 0.3s ease;
-}
+        display: block;
+        width: 90%;
+        max-width: 300px; /* طول مناسب للزر */
+        margin: 30px auto; /* يتوسط الصفحة مع مسافة علوية مريحة */
+        padding: 15px 20px;
+        background-color: #6A0DAD; /* البنفسجي الذي اخترته */
+        color: #ffffff; /* كتابة باللون الأبيض */
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 50px; /* حواف دائرية انسيابية */
+        text-decoration: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2); /* ظل خفيف يعطي فخامة */
+    }
 
-.about-btn:hover {
-    background-color: #580b8f; /* بنفسجي أغمق عند التمرير */
-    transform: translateY(-2px);
-}
-  </style>
+    .about-btn:hover {
+        background-color: #580b8f; /* بنفسجي أغمق عند التمرير */
+        transform: translateY(-3px); /* حركة خفيفة للأعلى */
+        box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
+    }
+</style>
     
 <!-- Header -->
    <header>
@@ -593,6 +597,7 @@
 </body>
 
 </html>
+
 
 
 
