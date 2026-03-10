@@ -84,6 +84,31 @@
 
         /* Header + Navbar */
 /* --- التنسيق النهائي للهيدر في الموقع الرسمي --- */
+/* إجبار الروابط على اللون الأبيض ومنع اللون الأزرق الافتراضي */
+.nav-links a, 
+.brand-container, 
+.brand-name {
+    color: white !important; /* اللون الأبيض الصريح */
+    text-decoration: none !important; /* حذف الخط الذي تحت الكلام */
+}
+
+/* التأكد من أن الروابط داخل القائمة بيضاء دائماً */
+.nav-links a:visited, 
+.nav-links a:active {
+    color: white !important;
+}
+
+/* لون القوائم عند تمرير الماوس */
+.nav-links a:hover {
+    color: var(--primary-color) !important; /* يتحول للبنفسجي */
+    background-color: white !important; /* خلفية بيضاء */
+}
+
+/* أيقونة القائمة (☰) في الجوال */
+.menu-btn span {
+    color: white !important;
+}
+        
 header {
     background-color: var(--primary-color) !important;
     padding: 10px 5% !important;
@@ -548,6 +573,7 @@ header {
 </body>
 
 </html>
+
 
 
 
