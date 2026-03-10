@@ -30,14 +30,11 @@
     
  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
       
-   <style>
-    /* 1. الإعدادات العامة والمتغيرات */
+<style>
+    /* 1. الإعدادات العامة */
     :root {
         --primary-color: #7d5ba6;
-        --accent-color: #ff85a2;
-        --gold-color: #f4d35e;
         --bg-light: #fff5f7;
-        --text-dark: #333;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -45,54 +42,52 @@
     body {
         font-family: 'Cairo', sans-serif;
         background-color: var(--bg-light);
-        color: var(--text-dark);
-        line-height: 1.6;
         overflow-x: hidden;
     }
 
-    /* 2. الهيدر والقائمة (الكمبيوتر) */
+    /* 2. الهيدر - ضبط الارتفاع ليكون مماثلاً للرئيسية */
     header {
         background-color: var(--primary-color) !important;
-        padding: 8px 5% !important;
+        padding: 12px 5% !important; /* زيادة التباعد لإعطاء الهيدر فخامة وارتفاع */
         position: sticky;
         top: 0;
         z-index: 1000;
         width: 100%;
+        min-height: 70px; /* ضمان ارتفاع أدنى للهيدر */
+        display: flex;
+        align-items: center;
     }
 
     .navbar {
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
+        width: 100%;
     }
 
     .brand-container {
         display: flex !important;
         align-items: center !important;
-        gap: 12px !important;
+        gap: 15px !important;
         text-decoration: none !important;
     }
 
-    /* توحيد الشعار ليكون متناسقاً مع الخط الصغير 18px */
     .brand-logo {
-        height: 42px !important; 
-        width: 42px !important;
+        height: 50px !important; /* حجم متوسط ومناسب للرئيسية */
+        width: 50px !important;
         background-color: white !important;
         border-radius: 50% !important;
-        padding: 5px !important;
+        padding: 6px !important;
         object-fit: contain !important;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .brand-name {
-        font-family: 'Cairo', sans-serif !important;
-        font-size: 18px !important; 
+        font-size: 18px !important;
         font-weight: 800 !important;
         color: white !important;
-        text-decoration: none !important;
-        white-space: nowrap !important;
     }
 
+    /* 3. القوائم في الكمبيوتر */
     .nav-links {
         display: flex !important;
         list-style: none !important;
@@ -104,87 +99,52 @@
         color: white !important;
         font-weight: 700 !important;
         font-size: 18px !important;
-        padding: 6px 12px;
-        transition: 0.3s;
-    }
-
-    .nav-links a:hover {
-        background-color: white !important;
-        color: var(--primary-color) !important;
-        border-radius: 6px;
     }
 
     .menu-btn { display: none; }
 
-    /* 3. تنسيق الجوال (حل مشكلة الاختفاء والعرض) */
+    /* 4. حل مشاكل الجوال (الإخفاء، العرض، التنسيق) */
     @media (max-width: 768px) {
-        .brand-name { font-size: 16px !important; }
-        
-        .menu-btn {
-            display: block !important;
-            color: white !important;
-            font-size: 28px !important;
-            cursor: pointer;
-        }
-
+        /* إخفاء القائمة إجبارياً في البداية */
         .nav-links {
-            display: none; 
+            display: none !important; 
             position: absolute;
-            top: 60px;
-            left: 10%;
-            right: 10%;
-            width: 80% !important; 
+            top: 70px; /* يبدأ تحت الهيدر المرتفع */
+            left: 15%; /* جعل القائمة أنحف (ليست عريضة) */
+            right: 15%;
+            width: 70% !important; 
             background-color: white !important;
             flex-direction: column !important;
             padding: 10px 0 !important;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             z-index: 2000;
-            gap: 0 !important; /* إزالة أي فراغات داخلية */
+            gap: 0 !important;
         }
 
-        .nav-links.show { display: flex !important; }
+        /* تظهر فقط عند إضافة كلاس show بواسطة الجافاسكريبت */
+        .nav-links.show {
+            display: flex !important;
+        }
 
         .nav-links a {
-            color: var(--primary-color) !important; 
-            padding: 12px !important;
+            color: var(--primary-color) !important;
+            padding: 15px !important;
             text-align: center;
-            border-bottom: 1px solid #f5f5f5;
-            font-size: 17px !important;
+            border-bottom: 1px solid #f0f0f0;
+            width: 100%;
             display: block !important;
         }
 
-        .nav-links li:last-child a { border-bottom: none !important; }
+        .menu-btn {
+            display: block !important;
+            color: white !important;
+            font-size: 30px !important;
+            cursor: pointer;
+        }
     }
-
-    /* 4. بقية أقسام الصفحة (Hero, Gallery, Contact) */
-    .hero {
-        padding: 60px 10%;
-        text-align: center;
-        background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
-    }
-
-    .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
-
-    .about-section { padding: 40px 10%; text-align: center; background-color: white; }
-    .about-text { max-width: 800px; margin: auto; font-size: 1.2rem; color: #555; }
-
-    .gallery-section { padding: 60px 10%; }
-    .section-title { text-align: center; margin-bottom: 40px; font-size: 2.2rem; color: var(--primary-color); }
-    .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent-color); margin: 10px auto; border-radius: 2px; }
-
-    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-    .artwork-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border: 3px solid transparent; }
-    .artwork-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
-    .artwork-card img { width: 100%; height: 300px; object-fit: cover; display: block; }
-
-    .contact-box { background: var(--primary-color); color: white; padding: 50px 10%; border-radius: 30px; margin: 60px 10%; text-align: center; }
-    .social-icons { display: flex; justify-content: center; gap: 30px; margin-top: 25px; }
-    .social-icons a { transition: transform 0.3s ease; }
-    .social-icons a:hover { transform: scale(1.2); }
-
-    footer { padding: 30px; text-align: center; font-size: 0.9rem; color: #888; }
 </style>
+    
 </head>
 
 <body> 
