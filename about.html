@@ -253,17 +253,25 @@ header {
             color: #888;
         }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+       /* تنسيق الحاوية لضمان المحاذاة */
+.brand-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px;
+    text-decoration: none !important;
+}
 
-        .brand-logo {
-            height: 60px !important;
-            width: auto;
-            display: block;
-        }       
+/* تحويل الشعار إلى دائرة بيضاء فخمة */
+.brand-logo {
+    height: 55px !important; /* طول محدد */
+    width: 55px !important;  /* عرض مساوٍ للطول لضمان الدائرة */
+    background-color: white !important; /* الخلفية البيضاء */
+    border-radius: 50% !important; /* جعل الحواف دائرية بنسبة 100% */
+    padding: 6px !important; /* مسافة داخلية لبروز الشعار */
+    object-fit: contain !important; /* الحفاظ على أبعاد الشعار داخل الدائرة */
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل ناعم لبروز الدائرة */
+}
     </style>
 
     <style>
