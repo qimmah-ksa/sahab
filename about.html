@@ -103,62 +103,51 @@ header {
     border-radius: 6px;
 }
 
-        /* تنسيق الجوال */
-        .menu-btn {
-            display: none;
-            font-size: 30px;
-            color: var(--primary-color);
-            cursor: pointer;
-        }
-
-      /* تنسيق الجوال الاحترافي - مطابق للصفحة الرئيسية */
+/* تنسيق الجوال ليكون مطابقاً تماماً للصفحة الرئيسية */
 @media (max-width: 768px) {
-    /* 1. إظهار زر القائمة (☰) باللون الأبيض فوق الخلفية البنفسجية */
+    /* جعل القائمة كصندوق معلق ومنفصل عن الحواف */
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: 65px;         /* تظهر تحت الهيدر مباشرة */
+        left: 5%;          /* مسافة من اليسار */
+        right: 5%;         /* مسافة من اليمين */
+        width: 90% !important; 
+        background-color: white !important; /* خلفية بيضاء فخمة */
+        flex-direction: column !important;
+        padding: 10px 0;
+        border-radius: 15px; /* زوايا منحنية مثل الرئيسية */
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* ظل لإبراز القائمة */
+        z-index: 2000;
+    }
+
+    /* إظهار القائمة عند الضغط على زر ☰ */
+    .nav-links.show {
+        display: flex !important;
+    }
+
+    /* تنسيق النصوص داخل القائمة (بنفسجي فوق أبيض) */
+    .nav-links a {
+        color: #7d5ba6 !important; 
+        padding: 15px !important;
+        text-align: center;
+        border-bottom: 1px solid #f5f5f5;
+        font-weight: 700 !important;
+        font-size: 18px !important;
+        display: block !important;
+    }
+
+    /* إخفاء الخط الفاصل لآخر عنصر */
+    .nav-links li:last-child a {
+        border-bottom: none !important;
+    }
+
+    /* زر القائمة (☰) باللون الأبيض فوق البنفسجي */
     .menu-btn {
         display: block !important;
         color: white !important;
         font-size: 28px !important;
         cursor: pointer;
-        z-index: 1001;
-    }
-
-    /* 2. تنسيق القائمة المنسدلة */
-    .nav-links {
-        display: none; /* مخفية افتراضياً */
-        position: absolute;
-        top: 60px;
-        left: 0;
-        right: 0;
-        background-color: white !important; /* خلفية بيضاء للقائمة فقط */
-        flex-direction: column !important;
-        padding: 20px 0;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        z-index: 1000;
-        width: 100%;
-    }
-
-    /* إظهار القائمة عند النقر */
-    .nav-links.show {
-        display: flex !important;
-    }
-
-    /* 3. حل مشكلة اختفاء الأسماء (جعلها بنفسجية لتظهر فوق الخلفية البيضاء) */
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-links a {
-        color: #7d5ba6 !important; /* لون بنفسجي واضح */
-        font-size: 18px !important;
-        padding: 15px 0 !important;
-        display: block !important;
-        border-bottom: 1px solid #f5f5f5; /* خط فاصل خفيف */
-        font-weight: 700 !important;
-    }
-
-    .nav-links li:last-child a {
-        border-bottom: none !important;
     }
 
     /* تصغير اسم الموقع ليناسب الجوال */
