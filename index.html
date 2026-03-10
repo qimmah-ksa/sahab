@@ -106,13 +106,24 @@ header {
     object-fit: contain !important;
 }
 
-/* اسم الموقع - جعلناه 18px ليتساوى مع القوائم */
-.brand-name {
-    font-family: 'Cairo', sans-serif;
-    font-size: 18px !important; 
-    font-weight: 800 !important; /* عريض ليميزه كعنوان */
+/* تصغير اسم الموقع ليتساوى مع القوائم (18px) */
+header .brand-name, 
+div.brand-name, 
+.navbar .brand-name {
+    font-size: 18px !important; /* الحجم الموحد */
+    font-weight: 800 !important;
     color: white !important;
     text-decoration: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: inline-block !important;
+}
+
+/* التأكد من تناسق الحاوية لعدم وجود فراغات ضخمة */
+.brand-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
 }
 
 /* روابط القائمة - بنفس حجم الاسم 18px */
@@ -713,6 +724,7 @@ header {
 </body>
 
 </html>
+
 
 
 
