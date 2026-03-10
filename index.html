@@ -83,65 +83,21 @@
         }
 
         /* Header + Navbar */
-        header {
-            background: white;
-            padding: 15px 5%;
-            box-shadow: 0 4px 15px rgba(125, 91, 166, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+       header {
+    background: var(--primary-color) !important; /* هذا ما يجعله بنفسجياً */
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
 .brand-name {
-    /* 1. نوع الخط: سنستخدم خط Cairo أو خطاً فنياً */
-    font-family: 'Cairo', sans-serif; 
-    
-    /* 2. حجم الخط */
-    font-size: 32px; 
-    
-    /* 3. لون الخط: سنختار البنفسجي الغامق أو الوردي الفني */
-    color: #7d5ba6; 
-    
-    /* 4. ثقل الخط (عريض) */
-    font-weight: 900; 
-    
-    /* 5. إضافة ظل خفيف للنص ليعطيه لمسة جمالية */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    
-    /* 6. المسافات */
-    letter-spacing: 1px;
-    padding: 10px 0;
+    color: white !important; /* ليكون الاسم أبيضاً فوق البنفسجي */
 }
 
-       /* روابط التنقل - النسخة المحدثة */
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-        
 .nav-links a {
-    text-decoration: none;
-    color: var(--primary-color); /* سيأخذ البنفسجي من الـ root */
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    color: white !important; /* لتكون القوائم بيضاء */
 }
-
-.nav-links a:hover {
-    color: var(--accent-color); /* سيتحول للوردي عند التمرير */
-    background-color: #fff0f3; /* خلفية وردية خفيفة جداً لإضافة لمسة فنية */
-    transform: translateY(-2px); /* حركة خفيفة للأعلى */
-}
-
 
 /* تنسيق زر القائمة للجوال */
 .menu-btn {
@@ -601,6 +557,7 @@
 </body>
 
 </html>
+
 
 
 
