@@ -30,284 +30,161 @@
     
  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
       
-    <style>
-        :root {
-            --primary-color: #7d5ba6;
-            --accent-color: #ff85a2;
-            --gold-color: #f4d35e;
-            --bg-light: #fff5f7;
-            --text-dark: #333;
-        }
-
-        /* تصحيح لضمان عدم وجود مسافات بيضاء في أطراف الصفحة */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden; /* لمنع التمرير الأفقي العرضي */
-        }
-
-/* --- الكود الموحد والنهائي لصفحة من أنا --- */
-header {
-    background-color: #7d5ba6 !important;
-    padding: 8px 5% !important; /* هيدر نحيف واحترافي */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.brand-container {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    text-decoration: none !important;
-}
-
-/* الشعار الدائري الصغير المتناسق مع الخط الجديد */
-.brand-logo {
-    height: 42px !important;
-    width: 42px !important;
-    background-color: white !important;
-    border-radius: 50% !important;
-    padding: 4px !important;
-    object-fit: contain !important;
-}
-
-/* اسم الموقع - تم توحيده ليكون 18px مثل القوائم */
-.brand-name {
-    font-family: 'Cairo', sans-serif !important;
-    font-size: 18px !important; 
-    font-weight: 800 !important;
-    color: white !important;
-    text-decoration: none !important;
-    white-space: nowrap !important;
-}
-
-/* روابط القائمة - 18px */
-.nav-links a {
-    text-decoration: none !important;
-    color: white !important;
-    font-weight: 700 !important;
-    font-size: 18px !important;
-    padding: 6px 12px;
-    transition: 0.3s;
-}
-
-/* تأثير التمرير */
-.nav-links a:hover {
-    background-color: white !important;
-    color: #7d5ba6 !important;
-    border-radius: 6px;
-}
-
-/* تنسيق الجوال ليكون مطابقاً تماماً للصفحة الرئيسية */
-@media (max-width: 768px) {
-    /* جعل القائمة كصندوق معلق ومنفصل عن الحواف */
-    .nav-links {
-        display: none; 
-        position: absolute;
-        top: 65px;         /* تظهر تحت الهيدر مباشرة */
-        left: 5%;          /* مسافة من اليسار */
-        right: 5%;         /* مسافة من اليمين */
-        width: 90% !important; 
-        background-color: white !important; /* خلفية بيضاء فخمة */
-        flex-direction: column !important;
-        padding: 10px 0;
-        border-radius: 15px; /* زوايا منحنية مثل الرئيسية */
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2); /* ظل لإبراز القائمة */
-        z-index: 2000;
+   <style>
+    /* 1. الإعدادات العامة والمتغيرات */
+    :root {
+        --primary-color: #7d5ba6;
+        --accent-color: #ff85a2;
+        --gold-color: #f4d35e;
+        --bg-light: #fff5f7;
+        --text-dark: #333;
     }
 
-    /* إظهار القائمة عند الضغط على زر ☰ */
-    .nav-links.show {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        font-family: 'Cairo', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* 2. الهيدر والقائمة (الكمبيوتر) */
+    header {
+        background-color: var(--primary-color) !important;
+        padding: 8px 5% !important;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+    }
+
+    .navbar {
         display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
     }
 
-    /* تنسيق النصوص داخل القائمة (بنفسجي فوق أبيض) */
+    .brand-container {
+        display: flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        text-decoration: none !important;
+    }
+
+    /* توحيد الشعار ليكون متناسقاً مع الخط الصغير 18px */
+    .brand-logo {
+        height: 42px !important; 
+        width: 42px !important;
+        background-color: white !important;
+        border-radius: 50% !important;
+        padding: 5px !important;
+        object-fit: contain !important;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .brand-name {
+        font-family: 'Cairo', sans-serif !important;
+        font-size: 18px !important; 
+        font-weight: 800 !important;
+        color: white !important;
+        text-decoration: none !important;
+        white-space: nowrap !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        list-style: none !important;
+        gap: 20px;
+    }
+
     .nav-links a {
-        color: #7d5ba6 !important; 
-        padding: 15px !important;
-        text-align: center;
-        border-bottom: 1px solid #f5f5f5;
+        text-decoration: none !important;
+        color: white !important;
         font-weight: 700 !important;
         font-size: 18px !important;
-        display: block !important;
+        padding: 6px 12px;
+        transition: 0.3s;
     }
 
-    /* إخفاء الخط الفاصل لآخر عنصر */
-    .nav-links li:last-child a {
-        border-bottom: none !important;
+    .nav-links a:hover {
+        background-color: white !important;
+        color: var(--primary-color) !important;
+        border-radius: 6px;
     }
 
-    /* زر القائمة (☰) باللون الأبيض فوق البنفسجي */
-    .menu-btn {
-        display: block !important;
-        color: white !important;
-        font-size: 28px !important;
-        cursor: pointer;
+    .menu-btn { display: none; }
+
+    /* 3. تنسيق الجوال (حل مشكلة الاختفاء والعرض) */
+    @media (max-width: 768px) {
+        .brand-name { font-size: 16px !important; }
+        
+        .menu-btn {
+            display: block !important;
+            color: white !important;
+            font-size: 28px !important;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: none; 
+            position: absolute;
+            top: 60px;
+            left: 10%;
+            right: 10%;
+            width: 80% !important; 
+            background-color: white !important;
+            flex-direction: column !important;
+            padding: 10px 0 !important;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 2000;
+            gap: 0 !important; /* إزالة أي فراغات داخلية */
+        }
+
+        .nav-links.show { display: flex !important; }
+
+        .nav-links a {
+            color: var(--primary-color) !important; 
+            padding: 12px !important;
+            text-align: center;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 17px !important;
+            display: block !important;
+        }
+
+        .nav-links li:last-child a { border-bottom: none !important; }
     }
 
-    /* تصغير اسم الموقع ليناسب الجوال */
-    .brand-name {
-        font-size: 16px !important;
+    /* 4. بقية أقسام الصفحة (Hero, Gallery, Contact) */
+    .hero {
+        padding: 60px 10%;
+        text-align: center;
+        background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
     }
-}
-                
-        /* Hero Section */
-        .hero {
-            padding: 60px 10%;
-            text-align: center;
-            background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
-        }
 
-        .hero h1 {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
+    .hero h1 { font-size: 2.5rem; color: var(--primary-color); margin-bottom: 15px; }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 25px;
-        }
+    .about-section { padding: 40px 10%; text-align: center; background-color: white; }
+    .about-text { max-width: 800px; margin: auto; font-size: 1.2rem; color: #555; }
 
-        /* About Section - هنا التعديل لضمان التوسيط الكامل بدون صورة */
-        .about-section {
-            padding: 40px 10%;
-            text-align: center;
-            background-color: white; /* تمييز بسيط عن قسم الهيرو */
-        }
+    .gallery-section { padding: 60px 10%; }
+    .section-title { text-align: center; margin-bottom: 40px; font-size: 2.2rem; color: var(--primary-color); }
+    .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--accent-color); margin: 10px auto; border-radius: 2px; }
 
-        .about-text {
-            max-width: 800px; /* زيادة العرض قليلاً بما أنه لا توجد صورة */
-            margin: auto;
-            font-size: 1.2rem;
-            color: #555;
-            line-height: 1.8;
-        }
-    </style>
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .artwork-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); transition: 0.3s; border: 3px solid transparent; }
+    .artwork-card:hover { transform: translateY(-10px); border-color: var(--accent-color); }
+    .artwork-card img { width: 100%; height: 300px; object-fit: cover; display: block; }
 
-      <style>
-        .gallery-section { padding: 60px 10%; }
+    .contact-box { background: var(--primary-color); color: white; padding: 50px 10%; border-radius: 30px; margin: 60px 10%; text-align: center; }
+    .social-icons { display: flex; justify-content: center; gap: 30px; margin-top: 25px; }
+    .social-icons a { transition: transform 0.3s ease; }
+    .social-icons a:hover { transform: scale(1.2); }
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.2rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-color);
-            margin: 10px auto;
-            border-radius: 2px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .artwork-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 3px solid transparent;
-        }
-
-        .artwork-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
-        }
-
-        .artwork-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .artwork-info {
-            padding: 15px;
-            text-align: center;
-        }
-
-        .artwork-info h3 {
-            color: var(--primary-color);
-            font-size: 1.2rem;
-        }
-
-        /* 2. تنسيق قسم التواصل (Contact) - كما هي في كودك */
-        .contact-box {
-            background: var(--primary-color);
-            color: white;
-            padding: 50px 10%;
-            border-radius: 30px;
-            margin: 60px 10%;
-            text-align: center;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-        }
-                
-        footer {
-            padding: 30px;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888;
-        }
-
-       /* تنسيق الحاوية لضمان المحاذاة */
-.brand-container {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px;
-    text-decoration: none !important;
-}
-
-/* تحويل الشعار إلى دائرة بيضاء فخمة */
-.brand-logo {
-    height: 55px !important; /* طول محدد */
-    width: 55px !important;  /* عرض مساوٍ للطول لضمان الدائرة */
-    background-color: white !important; /* الخلفية البيضاء */
-    border-radius: 50% !important; /* جعل الحواف دائرية بنسبة 100% */
-    padding: 6px !important; /* مسافة داخلية لبروز الشعار */
-    object-fit: contain !important; /* الحفاظ على أبعاد الشعار داخل الدائرة */
-    display: block;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* ظل ناعم لبروز الدائرة */
-}
-    </style>
-
-    <style>
-        #about-sahab {
-            margin-top: 60px;
-        }
-    </style>
+    footer { padding: 30px; text-align: center; font-size: 0.9rem; color: #888; }
+</style>
 </head>
 
 <body> 
@@ -391,10 +268,12 @@ header {
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
 
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('show');
-        }
-    </script>
+<script>
+    function toggleMenu() {
+        // استهداف القائمة عن طريق الـ ID لضمان الدقة
+        const nav = document.getElementById('navLinks');
+        nav.classList.toggle('show');
+    }
+</script>
 </body>
 </html>
