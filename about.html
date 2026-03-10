@@ -33,28 +33,22 @@
 <style>
     /* 1. الإعدادات العامة */
     :root {
-        --primary-color: #7d5ba6; /* البنفسجي الأساسي */
-        --accent-color: #ff85a2;  /* *** أضف هذا السطر للون الوردي *** */
+        --primary-color: #7d5ba6;
+        --accent-color: #ff85a2;
         --bg-light: #fff5f7;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    
-    body {
-        font-family: 'Cairo', sans-serif;
-        background-color: var(--bg-light);
-        overflow-x: hidden;
-    }
 
-    /* 2. الهيدر - ضبط الارتفاع ليكون مماثلاً للرئيسية */
     header {
         background-color: var(--primary-color) !important;
-        padding: 12px 5% !important; /* زيادة التباعد لإعطاء الهيدر فخامة وارتفاع */
+        /* زدنا الـ Padding هنا ليعطي ارتفاعاً فخماً مثل الرئيسية */
+        padding: 18px 5% !important; 
         position: sticky;
         top: 0;
         z-index: 1000;
         width: 100%;
-        min-height: 70px; /* ضمان ارتفاع أدنى للهيدر */
+        min-height: 85px; /* ارتفاع الهيدر المثالي */
         display: flex;
         align-items: center;
     }
@@ -74,8 +68,8 @@
     }
 
     .brand-logo {
-        height: 50px !important; /* حجم متوسط ومناسب للرئيسية */
-        width: 50px !important;
+        height: 52px !important; 
+        width: 52px !important;
         background-color: white !important;
         border-radius: 50% !important;
         padding: 6px !important;
@@ -88,11 +82,11 @@
         color: white !important;
     }
 
-    /* 3. القوائم في الكمبيوتر */
+    /* 3. القوائم في الكمبيوتر - قمنا بزيادة الـ gap لمنع التقارب */
     .nav-links {
         display: flex !important;
         list-style: none !important;
-        gap: 20px;
+        gap: 35px !important; /* مسافة كافية وجميلة بين الروابط */
     }
 
     .nav-links a {
@@ -100,52 +94,54 @@
         color: white !important;
         font-weight: 700 !important;
         font-size: 18px !important;
+        transition: 0.3s;
     }
+
+    .nav-links a:hover { color: var(--accent-color); }
 
     .menu-btn { display: none; }
 
-    /* 4. حل مشاكل الجوال (الإخفاء، العرض، التنسيق) */
+    /* 4. تنسيق الجوال - رشيقة وغير متباعدة */
     @media (max-width: 768px) {
-        /* إخفاء القائمة إجبارياً في البداية */
         .nav-links {
             display: none !important; 
             position: absolute;
-            top: 70px; /* يبدأ تحت الهيدر المرتفع */
-            left: 15%; /* جعل القائمة أنحف (ليست عريضة) */
+            top: 85px; /* يبدأ تحت الهيدر الجديد */
+            left: 15%; 
             right: 15%;
             width: 70% !important; 
             background-color: white !important;
             flex-direction: column !important;
-            padding: 10px 0 !important;
+            /* تقليل الـ Padding الداخلي للصندوق ليصبح أنحف */
+            padding: 5px 0 !important; 
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             z-index: 2000;
             gap: 0 !important;
         }
 
-        /* تظهر فقط عند إضافة كلاس show بواسطة الجافاسكريبت */
-        .nav-links.show {
-            display: flex !important;
-        }
+        .nav-links.show { display: flex !important; }
 
         .nav-links a {
             color: var(--primary-color) !important;
-            padding: 15px !important;
+            /* تقليل التباعد بين الروابط في الجوال لتكون رشيقة */
+            padding: 12px !important; 
             text-align: center;
-            border-bottom: 1px solid #f0f0f0;
+            border-bottom: 1px solid #f5f5f5;
             width: 100%;
             display: block !important;
         }
 
+        .nav-links li:last-child a { border-bottom: none !important; }
+
         .menu-btn {
             display: block !important;
             color: white !important;
-            font-size: 30px !important;
+            font-size: 32px !important;
             cursor: pointer;
         }
     }
 </style>
-
     <style>
     /* تنسيق الفوتر الاحترافي */
 footer {
