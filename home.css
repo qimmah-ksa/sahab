@@ -104,4 +104,18 @@
     background-color: #580b8f;
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
+
+}
+/* قسم من أنا في الصفحة الرئيسية */
+.about-section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.about-text {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.8;
 }
