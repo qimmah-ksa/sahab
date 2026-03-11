@@ -180,4 +180,11 @@ header {
 
 .social-icons a:hover {
     transform: scale(1.2);
+
+}
+footer {
+    padding: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
 }
