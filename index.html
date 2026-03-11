@@ -255,32 +255,33 @@
         }
     </script>
 <button id="backToTop" onclick="scrollToTop()" title="العودة للأعلى">↑ للأعلى</button>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    window.onscroll = function() {
-        let saba_btn = document.getElementById("backToTop"); 
-        if (saba_btn) {
-            // يظهر الزر بعد النزول 300 بكسل
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                saba_btn.style.display = "block";
-            } else {
-                saba_btn.style.display = "none";
-            }
-        }
-    };
+document.addEventListener("DOMContentLoaded", function() {
 
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
+    const btn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+
+});
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
 </script>
    
 </body>
 
 </html>
+
 
 
 
