@@ -454,15 +454,14 @@ header {
 <body> 
     
   <header>
-    <nav class="navbar" style="display: flex; justify-content: space-between; align-items: center;">
-        <a href="/" class="brand-container" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+    <nav class="navbar">
+        <a href="./" class="brand-container" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
             <img src="logo.png" alt="شعار سحاب" class="brand-logo">
             <div class="brand-name">موقع الرسامة سحاب علي الصبيحي</div>
         </a>
-
-<div class="menu-btn" onclick="toggleMenu()">
-    ☰
-</div>
+        <div class="menu-btn" onclick="toggleMenu()" style="cursor: pointer;">
+            <span style="font-size: 30px; color: white;">☰</span>
+        </div>
 
     <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 20px;">
     <li><a href="/">الرئيسية</a></li>    
