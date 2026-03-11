@@ -1,0 +1,183 @@
+/* ===========================
+   Global Variables
+=========================== */
+:root {
+    --primary-color: #7d5ba6;
+    --accent-color: #ff85a2;
+    --gold-color: #f4d35e;
+    --bg-light: #fff5f7;
+    --text-dark: #333;
+}
+
+/* ===========================
+   Reset + Body
+=========================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ===========================
+   Header + Navbar
+=========================== */
+header {
+    background-color: #7d5ba6 !important;
+    padding: 10px 5% !important;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.brand-container {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+
+.brand-logo {
+    height: 55px !important;
+    width: 55px !important;
+    background-color: white !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    object-fit: contain !important;
+}
+
+.brand-name {
+    font-size: 32px !important;
+    font-weight: 900 !important;
+    color: white !important;
+}
+
+/* ===========================
+   Navigation Links
+=========================== */
+.nav-links {
+    list-style: none !important;
+    display: flex !important;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: white !important;
+    color: #7d5ba6 !important;
+    border-radius: 6px;
+}
+
+/* ===========================
+   Mobile Menu
+=========================== */
+.menu-btn { display: none !important; }
+
+@media (max-width: 768px) {
+
+    .brand-name {
+        font-size: 18px !important;
+        max-width: 180px;
+        line-height: 1.2;
+    }
+
+    .brand-logo {
+        height: 45px !important;
+        width: 45px !important;
+    }
+
+    .menu-btn {
+        display: block !important;
+        color: white !important;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        display: none !important;
+        position: absolute;
+        top: 70px;
+        right: 5%;
+        left: 5%;
+        background: white;
+        flex-direction: column !important;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        z-index: 2000;
+    }
+
+    .nav-links.show { display: flex !important; }
+
+    .nav-links a {
+        color: #7d5ba6 !important;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding: 12px;
+    }
+}
+
+/* ===========================
+   Section Title
+=========================== */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+/* ===========================
+   Contact Box
+=========================== */
+.contact-box {
+    background: var(--primary-color);
+    color: white;
+    padding: 50px 10%;
+    border-radius: 30px;
+    margin: 60px 10%;
+    text-align: center;
+}
+
+/* ===========================
+   Social Icons
+=========================== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}

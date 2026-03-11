@@ -1,0 +1,107 @@
+/* ===========================
+   Hero Section
+=========================== */
+.hero {
+    padding: 80px 10%;
+    text-align: center;
+    background: linear-gradient(135deg, #fff 0%, #fce4ec 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* ===========================
+   Button
+=========================== */
+.btn-draw {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-draw:hover {
+    background: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* ===========================
+   Gallery
+=========================== */
+.gallery-section { padding: 60px 10%; }
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.artwork-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+    border: 3px solid transparent;
+}
+
+.artwork-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.artwork-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.artwork-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.artwork-info h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* ===========================
+   About Button
+=========================== */
+.about-btn {
+    display: block;
+    width: 90%;
+    max-width: 300px;
+    margin: 30px auto;
+    padding: 15px 20px;
+    background-color: #6A0DAD;
+    color: #ffffff;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(106, 13, 173, 0.2);
+}
+
+.about-btn:hover {
+    background-color: #580b8f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(106, 13, 173, 0.3);
+}
